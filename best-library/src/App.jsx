@@ -1,10 +1,10 @@
-import Books from "./pages/home"
+import LandingPage from "./pages/home"
 
 function App() {
 
   return (
     <>
-    <Books/>
+    <LandingPage/>
     </>
   )
 }
