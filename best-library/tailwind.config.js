@@ -1,14 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      grayscale: {
+        filter: "grayscale"
+      },
       colors: {
-        blue: "#284b63",
+        blue: "#fffff",
       },
       spacing: {},
       fontFamily: {
         poppins: "Poppins",
+        unbounded: "Unbounded",
+        DMSans: "Dm Sans"
       },
       borderRadius: {
         "3xs": "10px",
@@ -16,9 +22,13 @@ module.exports = {
       },
     },
     fontSize: {
-      xl: "20px",
-      "5xl": "24px",
-      inherit: "inherit",
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
     },
   },
   corePlugins: {
