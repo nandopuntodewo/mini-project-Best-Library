@@ -146,13 +146,8 @@ const Welcome = () => {
       </div>
       <div className="container mx-auto w-full flex justify-center text-center text-black">
         <p className="text-5xl font-unbounded font-bold max-w-5xl">
-          Ready to embark on your literary adventure? Sign up now!
+          Ready to embark on your literary adventure? Read now!
         </p>
-      </div>
-      <div className="container mx-auto w-full flex justify-center mb-20">
-        <button className="text-base px-6 py-3 bg-black rounded-xl text-white font-unbounded font-bold hover:bg-gray-500">
-          Join Best Library
-        </button>
       </div>
     </div>
   );
