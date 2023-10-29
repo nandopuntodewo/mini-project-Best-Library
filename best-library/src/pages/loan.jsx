@@ -1,48 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 const Loan = () => {
   const [bookCode, setBookCode] = useState("");
   const [memberId, setMemberId] = useState("");
 
   const checkBookCodeAndMemberId = async (bookCode, memberId) => {
-    // Fetch data buku dari API
-    const bookResponse = await axios.get(
-      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/${bookCode}`
-    );
+    try {
+      const bookResponse = await axios.get(
+        `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/${bookCode}`
+      );
 
-    const memberResponse = await axios.get(
-      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/${memberId}`
-    );
+      const memberResponse = await axios.get(
+        `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/${memberId}`
+      );
 
-    // Periksa apakah kode buku dan ID anggota ada pada data di API
-    if (!bookResponse.data || !memberResponse.data) {
-      return false;
+      if (bookResponse.data && memberResponse.data) {
+        return true; // Kedua nilai ditemukan
+      } else {
+        return false; // Salah satu atau kedua tidak ditemukan
+      }
+    } catch (error) {
+      console.error("Terjadi kesalahan saat mengambil data dari API:", error);
+      return false; // Tangani kesalahan saat melakukan permintaan API
     }
-
-    return true;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Lakukan pengecekan terhadap input book code dan member id
+    // Validasi input kosong
+    if (!bookCode || !memberId) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Isi kedua input sebelum mengirimkan formulir',
+      });
+      return;
+    }
+
     const isBookCodeAndMemberIdValid = await checkBookCodeAndMemberId(
       bookCode,
       memberId
     );
 
     if (!isBookCodeAndMemberIdValid) {
-      // Tampilkan pesan error
-      alert("Book code atau member ID tidak ditemukan");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Book code atau member ID tidak ditemukan atau terdapat kesalahan',
+      });
       return;
     }
 
-    // Kirim formulir ke API
-    const response = await axios.post(
-      "https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/",
+    // Kirim formulir peminjaman buku ke endpoint 'books'
+    const bookResponse = await axios.post(
+      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/`,
       {
         bookCode,
         memberId,
@@ -54,12 +70,34 @@ const Loan = () => {
       }
     );
 
-    if (response.status === 200) {
-      // Formulir berhasil dikirim
-      alert("Formulir berhasil dikirim");
+    // Kirim formulir peminjaman buku ke endpoint 'member'
+    const memberResponse = await axios.post(
+      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/`,
+      {
+        bookCode,
+        memberId,
+      },
+      {
+        headers: {
+          Authorization: "Bearer 1234567890",
+        },
+      }
+    );
+
+    if (bookResponse.data && memberResponse.data) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Berhasil meminjam buku',
+      });
+      setBookCode("");
+      setMemberId("");
     } else {
-      // Terjadi kesalahan
-      alert("Terjadi kesalahan saat mengirim formulir");
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Terjadi kesalahan saat mengirim formulir',
+      });
     }
   };
 
@@ -101,7 +139,7 @@ const Loan = () => {
                 Member ID:
               </label>
               <input
-                type="text"
+                type="password"
                 id="memberId"
                 value={memberId}
                 onChange={(event) => setMemberId(event.target.value)}
@@ -110,7 +148,7 @@ const Loan = () => {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center mx-auto font-poppins font-semibold px-4 py-2 bg-white text-[#3C6E71] rounded-md shadow hover:bg-[#ececec] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              className="flex items-center justify-center mx-auto font-poppins font-semibold px-4 py-2 bg-white text-[#3C6E71] rounded-md shadow hover-bg-[#ececec] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             >
               Submit
             </button>

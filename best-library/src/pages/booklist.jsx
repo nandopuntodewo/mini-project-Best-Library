@@ -87,15 +87,18 @@ const Books = () => {
                       src={book.cover}
                       alt=""
                     />
-                    <div className="flex flex-col justify-between p-4 leading-normal">
-                      <h5 className="mb-2 text-xl font-unbounded font-bold tracking-tight text-gray-900 dark:text-white">
+                    <div className="flex flex-col justify-between p-2 leading-normal">
+                      <h5 className="mb-1 text-xl font-unbounded  tracking-tight text-gray-900 dark:text-white">
                         {book.title}
                       </h5>
-                      <p className="mb-3 font-DMSans font-bold text-white dark:text-white">
+                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
                         Author: {book.author}
                       </p>
-                      <p className="mb-3 font-DMSans font-bold text-white dark:text-white">
+                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
                         Category: {book.category}
+                      </p>
+                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
+                        Location: {book.Location}
                       </p>
                     </div>
                   </a>
