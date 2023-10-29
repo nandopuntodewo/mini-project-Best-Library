@@ -5,6 +5,7 @@ import Loan from "./pages/loan";
 import AddBookForm from "./pages/addbook";
 import AddMemberForm from "./pages/addmember";
 import Login from "./pages/adminlogin";
+import Chatbot from "./pages/chatbot";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/admin/addbook" element={<AddBookForm />} />
         <Route path="/admin/addmember" element={<AddMemberForm />} />
         <Route path="/admin" element={<Login />} />
+        <Route path="/chatbot" element={<Chatbot />} />
         </Routes>
       </BrowserRouter>
     </>
