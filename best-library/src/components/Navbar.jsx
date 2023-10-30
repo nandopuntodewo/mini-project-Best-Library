@@ -63,6 +63,14 @@ export default function Navbar() {
           >
             Chatbot
           </a>
+          <a
+            className="nav-link text-white mx-4 "
+            href="#"
+            style={linkStyle}
+            onClick={() => handleNavigate("/admin")}
+          >
+            Admin
+          </a>
         </div>
       </div>
     </nav>
