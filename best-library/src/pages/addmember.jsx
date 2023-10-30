@@ -116,21 +116,6 @@ const AddMemberForm = () => {
           <form onSubmit={handleSubmit} className="w-1/2 mx-auto mt-8">
             <div className="mb-4">
               <label
-                htmlFor="memberId"
-                className="block font-poppins text-gray-700 text-sm font-bold mb-2"
-              >
-                Member ID:
-              </label>
-              <input
-                type="text"
-                id="memberId"
-                value={memberId}
-                onChange={(e) => setMemberId(e.target.value)}
-                className="w-full px-3 py-2 border rounded-md"
-              />
-            </div>
-            <div className="mb-4">
-              <label
                 htmlFor="memberName"
                 className="block font-poppins text-gray-700 text-sm font-bold mb-2"
               >
