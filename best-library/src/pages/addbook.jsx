@@ -66,7 +66,7 @@ const AddBookForm = () => {
       author: bookAuthor,
       cover: bookUrl,
       category: bookCategory,
-      location: bookLocation,
+      Location: bookLocation,
     };
 
     if (isEditing) {
@@ -122,7 +122,7 @@ const AddBookForm = () => {
     setBookAuthor(book.author);
     setBookUrl(book.cover);
     setBookCategory(book.category);
-    setBookLocation(book.location);
+    setBookLocation(book.Location);
     setIsEditing(true);
   };
 
@@ -233,9 +233,9 @@ const AddBookForm = () => {
                 <option value="" disabled>
                   Select a location
                 </option>
-                {locationOptions.map((location, index) => (
-                  <option key={index} value={location}>
-                    {location}
+                {locationOptions.map((Location, index) => (
+                  <option key={index} value={Location}>
+                    {Location}
                   </option>
                 ))}
               </select>

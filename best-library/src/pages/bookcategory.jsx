@@ -20,7 +20,7 @@ const Category = () => {
       </div>
       <div className="container mx-auto flex justify-center mt-10 mb-20" onClick={() => handleNavigate("/booklist")}>
         <div className="grid grid-cols-3 auto-rows-auto gap-6 ">
-          <div className="mx-3 mt-6 flex flex-col  rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
@@ -39,7 +39,7 @@ const Category = () => {
               </p>
             </div>
           </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
@@ -58,7 +58,7 @@ const Category = () => {
               </p>
             </div>
           </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
@@ -76,7 +76,7 @@ const Category = () => {
               </p>
             </div>
           </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
@@ -95,7 +95,7 @@ const Category = () => {
               </p>
             </div>
           </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
@@ -114,7 +114,7 @@ const Category = () => {
               </p>
             </div>
           </div>
-          <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#3C6E71] sm:shrink-0 sm:grow sm:basis-0">
+          <div className="mx-3 mt-6 flex flex-col  rounded-lg  bg-[#3C6E71] hover:bg-gray-700">
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"

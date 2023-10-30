@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -34,14 +36,16 @@ export default function Chatbot() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="flex justify-center items-center h-screen">
       <div className="bg-[#3C6E71] text-white p-8 rounded-xl text-center max-w-xl w-full">
-        <h2 className="font-bold text-2xl mb-4">Open AI</h2>
+        <h2 className="font-bold text-2xl mb-4 font-unbounded">Chat Bot</h2>
         <div className="mt-4">
           <div className="input-group">
-            <span className="input-group-text">Enter Prompt Below</span>
+            <span className="input-group-text font-poppins">Search for your books bellow</span>
             <textarea
-              className="block mx-auto w-64 h-32"
+              className="block w-full h-32 rounded-lg font-poppins mt-5"
               aria-label="With textarea"
               placeholder="Enter your prompt here"
               onChange={(e) => setPrompt(e.target.value)}
@@ -51,19 +55,21 @@ export default function Chatbot() {
           <div className="mt-4">
             <button
               type="button"
-              className="btn btn-primary w-full"
+              className="btn btn-primary w-auto h-7 rounded-md font-poppins"
               onClick={handleSubmit}
               disabled={isLoading || prompt.length === 0}
             >
-              {isLoading ? "Generating..." : "Generate"}
+              {isLoading ? "Searching..." : "Search Book"}
             </button>
           </div>
           <div className="mt-4">
-            <p className="font-bold">OPEN AI</p>
+            <p className="font-bold font-unbounded">BEST LIBRARY</p>
             <p>{result}</p>
           </div>
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

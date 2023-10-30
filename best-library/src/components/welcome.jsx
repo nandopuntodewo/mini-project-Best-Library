@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import {useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Welcome = () => {
+  const [availableBooks, setAvailableBooks] = useState(0);
+  const [totalMembers, setTotalMembers] = useState(0);
+
+  const fetchData = async () => {
+    try {
+      const booksResponse = await axios.get(
+        "https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/"
+      );
+      console.log(booksResponse.data);
+      const totalBooks = booksResponse.data.length;
+      setAvailableBooks(totalBooks);
+
+      const membersResponse = await axios.get(
+        "https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/"
+      ); // Ganti URL_API_ANDA_Untuk_Member dengan URL API member yang sesuai
+      console.log(membersResponse.data);
+      const totalMembers = membersResponse.data.length;
+      setTotalMembers(totalMembers);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const navigate = useNavigate();
+  const handleNavigate = (to) => {
+    navigate(to);
+  };
+
   const titleStyle = {
     color: "#ffff",
     fontFamily: "Unbounded",
@@ -17,7 +51,9 @@ const Welcome = () => {
           <h1 className="text-center" style={titleStyle}>
             BEST LIBRARY
           </h1>
-          <h3 className="text-4xl text-center font-poppins font-bold">"Immerse yourself in the world of books with Best Library."</h3>
+          <h3 className="text-4xl text-center font-poppins font-bold">
+            "Immerse yourself in the world of books with Best Library."
+          </h3>
         </div>
       </div>
       <div className="container mx-auto w-full text-[#3C6E71]">
@@ -41,7 +77,7 @@ const Welcome = () => {
           </div>
           <div>
             <p className="text-4xl text-[#3C6E71] font-unbounded font-bold">
-              25
+              {availableBooks}
             </p>
             <p className="text-base text-[#3C6E71] font-unbounded font-extrabold">
               Available Books
@@ -49,7 +85,7 @@ const Welcome = () => {
           </div>
           <div className="mb-0">
             <p className="text-4xl text-[#3C6E71] font-unbounded font-bold">
-              15
+              {totalMembers}
             </p>
             <p className="text-base text-[#3C6E71] font-unbounded font-extrabold">
               Happy Readers
@@ -67,6 +103,7 @@ const Welcome = () => {
               alt="Image 1"
               width="480"
               height="480"
+               onClick={() => handleNavigate("/bookcategory")}
               style={{
                 filter: "grayscale(100%)",
               }}
@@ -88,6 +125,7 @@ const Welcome = () => {
               alt="Image 2"
               width="480"
               height="480"
+               onClick={() => handleNavigate("/booklist")}
               style={{
                 filter: "grayscale(100%)",
               }}
@@ -109,6 +147,7 @@ const Welcome = () => {
               alt="Image 3"
               width="480"
               height="480"
+               onClick={() => handleNavigate("/loans")}
               style={{
                 filter: "grayscale(100%)",
               }}
@@ -130,6 +169,7 @@ const Welcome = () => {
               alt="Image 3"
               width="480"
               height="480"
+               onClick={() => handleNavigate("/chatbot")}
               style={{
                 filter: "grayscale(100%)",
               }}

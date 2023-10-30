@@ -80,7 +80,7 @@ const Books = () => {
                   <a
                     href="#"
                     key={book.id}
-                    className="flex flex-col items-center bg-white border border-gray-200 rounded-xl shadow-[#8a8c99] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-[#3C6E71] dark:hover:bg-gray-700"
+                    className="flex flex-col items-center rounded-xl shadow-[#8a8c99] md:flex-row md:max-w-xl bg-[#3C6E71] hover:bg-gray-700"
                   >
                     <img
                       className="object-cover rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg aspect-[4/6]"
@@ -88,16 +88,16 @@ const Books = () => {
                       alt=""
                     />
                     <div className="flex flex-col justify-between p-2 leading-normal">
-                      <h5 className="mb-1 text-xl font-unbounded  tracking-tight text-gray-900 dark:text-white">
+                      <h5 className="mb-1 text-xl font-unbounded  tracking-tight text-white ">
                         {book.title}
                       </h5>
-                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
+                      <p className="mb-1 font-DMSans font-bold text-white">
                         Author: {book.author}
                       </p>
-                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
+                      <p className="mb-1 font-DMSans font-bold text-white">
                         Category: {book.category}
                       </p>
-                      <p className="mb-1 font-DMSans font-bold text-white dark:text-white">
+                      <p className="mb-1 font-DMSans font-bold text-white">
                         Location: {book.Location}
                       </p>
                     </div>

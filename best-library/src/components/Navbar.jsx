@@ -55,6 +55,14 @@ export default function Navbar() {
           >
             Loans
           </a>
+          <a
+            className="nav-link text-white mx-4 "
+            href="#"
+            style={linkStyle}
+            onClick={() => handleNavigate("/chatbot")}
+          >
+            Chatbot
+          </a>
         </div>
       </div>
     </nav>
