@@ -86,8 +86,8 @@ const AddMemberForm = () => {
 
   const handleEdit = (member) => {
     setEditingMember(member);
-    setMemberId(member.id); // Menggunakan member.memberId
-    setMemberName(member.name); // Menggunakan member.memberName
+    setMemberId(member.id); 
+    setMemberName(member.name); 
     setIsEditing(true);
   };
 

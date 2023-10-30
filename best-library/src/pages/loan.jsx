@@ -56,7 +56,7 @@ const Loan = () => {
       return;
     }
 
-    // Kirim formulir peminjaman buku ke endpoint 'books'
+    // Kirim formulir peminjaman buku ke endpoint 'Books'
     const bookResponse = await axios.post(
       `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/`,
       {
@@ -70,7 +70,7 @@ const Loan = () => {
       }
     );
 
-    // Kirim formulir peminjaman buku ke endpoint 'member'
+    // Kirim formulir peminjaman buku ke endpoint 'Member'
     const memberResponse = await axios.post(
       `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/`,
       {

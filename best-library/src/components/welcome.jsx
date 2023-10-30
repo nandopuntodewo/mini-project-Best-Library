@@ -17,7 +17,7 @@ const Welcome = () => {
 
       const membersResponse = await axios.get(
         "https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/"
-      ); // Ganti URL_API_ANDA_Untuk_Member dengan URL API member yang sesuai
+      );
       console.log(membersResponse.data);
       const totalMembers = membersResponse.data.length;
       setTotalMembers(totalMembers);

@@ -7,12 +7,12 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Sederhana, contoh pengecekan email dan kata sandi
+    //pengecekan email dan kata sandi
     if (email === "nando@gmail.com" && password === "password") {
       // Email dan kata sandi benar, arahkan ke halaman /admin/addbook
       navigate("/admin/addbook");
     } else {
-      // Email atau kata sandi salah, Anda dapat menampilkan pesan kesalahan
+      // Email atau kata sandi salah, menampilkan pesan kesalahan
       alert("Email or password is incorrect");
     }
   };
