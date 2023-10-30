@@ -24,7 +24,7 @@ const AddMemberForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!memberId || !memberName) {
+    if (!memberName) {
       // Validasi agar tidak ada data yang kosong
       Swal.fire({
         icon: "error",
