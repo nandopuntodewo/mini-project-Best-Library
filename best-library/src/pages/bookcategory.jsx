@@ -24,7 +24,7 @@ const Category = () => {
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+                src="https://2.bp.blogspot.com/-yGfIIrw1cqc/VImD59UcN-I/AAAAAAAAAPU/kUp-BNhW3Ks/s1600/explosion.jpg"
                 alt="Hollywood Sign on The Hill"
               />
             </a>
@@ -43,7 +43,7 @@ const Category = () => {
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
+                src="https://images.ctfassets.net/qpn1gztbusu2/2sEq4wHQk4Vbj4pJP7Dlo9/9fb20ca821203b0a35847998c1a41cff/chinese-style-fantasy-scene.jpg"
                 alt="Palm Springs Road"
               />
             </a>
@@ -62,7 +62,7 @@ const Category = () => {
             <a href="#!">
               <img
                 className="object-cover rounded-lg md:h-full md:w-full  md:rounded-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/044.webp"
+                src="https://d16kd6gzalkogb.cloudfront.net/magazine_images/Jan-Steen-Beware-of-Luxury-1663.jpg"
                 alt="Skyscrapers"
               />
             </a>
