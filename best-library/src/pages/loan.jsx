@@ -31,7 +31,7 @@ const Loan = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     // Validasi input kosong
     if (!bookCode || !memberId) {
       Swal.fire({
@@ -41,20 +41,26 @@ const Loan = () => {
       });
       return;
     }
-
+  
     const isBookCodeAndMemberIdValid = await checkBookCodeAndMemberId(
       bookCode,
       memberId
     );
-
-    if (!isBookCodeAndMemberIdValid) {
+  
+    if (isBookCodeAndMemberIdValid) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Data ditemukan, Anda dapat meminjam buku',
+      });
+    } else {
       Swal.fire({
         icon: 'error',
         title: 'Error',
         text: 'Book code atau member ID tidak ditemukan atau terdapat kesalahan',
       });
-      return;
     }
+  };
 
     // Kirim formulir peminjaman buku ke endpoint 'Books'
     const bookResponse = await axios.post(
