@@ -135,7 +135,7 @@ const Welcome = () => {
             </p>
             <p className="text-left text-xl font-DMSans font-extrabold text-[#353535] mt-0 max-w-md">
               Go wild with our extensive book list, featuring everything from
-              timeless classics to the most groundbreaking bestsellers.
+              timeless classics to the most groundbreaking bestsells.
             </p>
           </div>
 
