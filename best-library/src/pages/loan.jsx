@@ -53,6 +53,8 @@ const Loan = () => {
         title: 'Success',
         text: 'Data ditemukan, Anda dapat meminjam buku',
       });
+      setBookCode(""); // Mengosongkan input
+      setMemberId(""); // Mengosongkan input
     } else {
       Swal.fire({
         icon: 'error',
@@ -61,34 +63,35 @@ const Loan = () => {
       });
     }
   };
+  
 
-    // Kirim formulir peminjaman buku ke endpoint 'Books'
-    const bookResponse = await axios.post(
-      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/`,
-      {
-        bookCode,
-        memberId,
-      },
-      {
-        headers: {
-          Authorization: "Bearer 1234567890",
-        },
-      }
-    );
+    // // Kirim formulir peminjaman buku ke endpoint 'Books'
+    // const bookResponse = await axios.post(
+    //   `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Books/`,
+    //   {
+    //     bookCode,
+    //     memberId,
+    //   },
+    //   {
+    //     headers: {
+    //       Authorization: "Bearer 1234567890",
+    //     },
+    //   }
+    // );
 
-    // Kirim formulir peminjaman buku ke endpoint 'Member'
-    const memberResponse = await axios.post(
-      `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/`,
-      {
-        bookCode,
-        memberId,
-      },
-      {
-        headers: {
-          Authorization: "Bearer 1234567890",
-        },
-      }
-    );
+    // // Kirim formulir peminjaman buku ke endpoint 'Member'
+    // const memberResponse = await axios.post(
+    //   `https://651e992e44a3a8aa4768a55d.mockapi.io/api/v1/Member/`,
+    //   {
+    //     bookCode,
+    //     memberId,
+    //   },
+    //   {
+    //     headers: {
+    //       Authorization: "Bearer 1234567890",
+    //     },
+    //   }
+    // );
 
     if (bookResponse.data && memberResponse.data) {
       Swal.fire({
